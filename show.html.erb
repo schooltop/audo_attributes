@@ -1,0 +1,32 @@
+  <%= form_for(@order, :html=>{:id=>"order_form",:name=>"myform", :class=>"form-horizontal"}) do |f| %>
+  <div class="control-group">
+    <label class="control-label" for="">共享到销售
+    </label>
+    <div class="controls">
+        <div class='row'>
+            <div class='span'>
+             <select id="user_share_operater_list" name="share_order[]" multiple data-placeholder="请选择" style="width:380px" class="chzn-select l_margin_0" >
+              <%= options_for_share_sale("order") %>
+            </select>
+            </div>
+            <div class="span l_margin_10 t_margin_5">
+                <a class="selection_icon selection_trigger" data-target="#user_share_operater_list" href="javascript:void(0);"></a>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="row">
+      <div class="item_two">
+        <div class="row">
+          <label class="sub_txt2">
+            <span>客户营业执照名称:</span>
+          </label>
+        </div>
+        <div >
+          <input type="text" id="client_business_licence_name" name="client_business_licence_name" value="<%=send_sycn_attribute_values('order','client_business_licence_name')%>" placeholder="请填写客户营业执照名称" style="width: 370px">   </input>
+        </div>
+      </div>
+  </div>
+  
+  <% end %>
