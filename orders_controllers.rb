@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  include SendMenu 
+  include ModelClass 
   sync_attributes_services :order
   
   def show
