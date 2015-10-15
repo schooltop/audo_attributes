@@ -37,7 +37,7 @@
            instance_variable_set("@sync_attributes_#{me_name}_values",@attribute_values)
            unless me_name.to_s == "channel"
              share_model = ("Share"+me_name.to_s.camelize).constantize
-             share_ids = ShareOrder.where("#{me_name}_id = ?",params[:id]).map(&:share_id)
+             share_ids = share_model.where("#{me_name}_id = ?",params[:id]).map(&:share_id)
              instance_variable_set("@share_sales_#{me_name}_ids",share_ids)
            end
         end
